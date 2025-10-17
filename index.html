@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- Page Title -->
+    <title>Product Recommendation</title>
+  </head>
+  <body>
+    <div class="temp-msg">
+      <p></p>
+    </div>
+    <main class="container">
+      <section class="intro">
+        <div>
+          <h2 class="intro__title"></h2>
+          <p class="intro__desc">
+            Get personalized product/brand recommendations based on your user
+            profile
+          </p>
+        </div>
+        <button class="intro__logout-btn">Log out</button>
+      </section>
+      <section class="content">
+        <div class="model-tab">
+          <h5 class="model-tab__title">Select Prediction Model</h5>
+          <form class="model-tab__form" id="modelForm">
+            <div class="model-tab__form__form-group">
+              <label for="model">Model</label>
+              <select id="model" name="gender" required>
+                <option value="">Select model..</option>
+                <option value="base">DeepFM</option>
+                <option value="gen">DeepFM (gen)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="input-tab">
+          <h5 class="input-tab__title">Input User Profile</h5>
+          <form class="input-tab__form" id="userProfileForm">
+            <div class="input-tab__form__form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select gender..</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+            </div>
+            <div class="input-tab__form__form-group">
+              <label for="ageGroup">Age Group</label>
+              <select id="ageGroup" name="ageGroup" required>
+                <option value="">Select age group..</option>
+                <option value="0">18-24</option>
+                <option value="1">25-29</option>
+                <option value="2">30-34</option>
+                <option value="3">35-39</option>
+                <option value="4">40-44</option>
+                <option value="5">45-49</option>
+                <option value="6">50+</option>
+              </select>
+            </div>
+            <div class="input-tab__form__form-group">
+              <label for="shoppingLevel">Shopping Level</label>
+              <select id="shoppingLevel" name="shoppingLevel" required>
+                <option value="">Select shopping level..</option>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+              </select>
+            </div>
+            <div class="input-tab__form__form-group">
+              <label for="isStudent">Student Status</label>
+              <select id="isStudent" name="isStudent" required>
+                <option value="">Select status..</option>
+                <option value="1">Yes, I'm a student</option>
+                <option value="0">No, I'm not a student</option>
+              </select>
+            </div>
+            <div class="input-tab__form__form-group">
+              <label for="hourOfClick">Preferred Shopping Hour</label>
+              <select id="hourOfClick" name="hourOfClick" required>
+                <option value="">Select hour..</option>
+                <option value="0">12 AM - 1 AM</option>
+                <option value="1">1 AM - 2 AM</option>
+                <option value="2">2 AM - 3 AM</option>
+                <option value="3">3 AM - 4 AM</option>
+                <option value="4">4 AM - 5 AM</option>
+                <option value="5">5 AM - 6 AM</option>
+                <option value="6">6 AM - 7 AM</option>
+                <option value="7">7 AM - 8 AM</option>
+                <option value="8">8 AM - 9 AM</option>
+                <option value="9">9 AM - 10 AM</option>
+                <option value="10">10 AM - 11 AM</option>
+                <option value="11">11 AM - 12 PM</option>
+                <option value="12">12 PM - 1 PM</option>
+                <option value="13">1 PM - 2 PM</option>
+                <option value="14">2 PM - 3 PM</option>
+                <option value="15">3 PM - 4 PM</option>
+                <option value="16">4 PM - 5 PM</option>
+                <option value="17">5 PM - 6 PM</option>
+                <option value="18">6 PM - 7 PM</option>
+                <option value="19">7 PM - 8 PM</option>
+                <option value="20">8 PM - 9 PM</option>
+                <option value="21">9 PM - 10 PM</option>
+                <option value="22">10 PM - 11 PM</option>
+                <option value="23">11 PM - 12 AM</option>
+              </select>
+            </div>
+            <div class="input-tab__form__form-group">
+              <label for="dayOfClick">Preferred Shopping Day</label>
+              <select id="dayOfClick" name="dayOfClick" required>
+                <option value="">Select day..</option>
+                <option value="0">Monday</option>
+                <option value="1">Tuesday</option>
+                <option value="2">Wednesday</option>
+                <option value="3">Thursday</option>
+                <option value="4">Friday</option>
+                <option value="5">Saturday</option>
+                <option value="6">Sunday</option>
+              </select>
+            </div>
+
+            <button type="submit" class="input-tab__form__save-profile-btn">
+              Save Your Profile
+            </button>
+            <button type="submit" class="input-tab__form__recommend-btn">
+              Get Recommendation
+            </button>
+          </form>
+        </div>
+        <div class="output-tab">
+          <h5 class="output-tab__title">Top 10 Recommended Products</h5>
+          <div class="output-tab__container">
+            <div class="output-tab__placeholder active">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <p>Enter user profile to get personalized recommendations</p>
+            </div>
+            <div class="output-tab__loading">
+              <div class="output-tab__loading__spinner"></div>
+              <p>Finding the perfect match..</p>
+            </div>
+            <div class="output-tab__results">
+              <div class="output-tab__results__card">
+                <div class="output-tab__results__card__rank-wrapper">
+                  <p>1</p>
+                </div>
+                <div class="output-tab__results__card__info">
+                  <p class="output-tab__results__card__brand"></p>
+                  <p class="output-tab__results__card__category"></p>
+                </div>
+                <p class="output-tab__results__card__price"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/authenticate.css" />
+    <!-- Page Title -->
+    <title>Authenticate</title>
+  </head>
+  <body>
+    <div class="temp-msg">
+      <p></p>
+    </div>
+    <main class="container">
+      <section class="intro">
+        <h2 class="intro__title">Welcome</h2>
+        <p class="intro__desc">Sign in to your account or create a new one</p>
+      </section>
+
+      <section class="auth-tabs">
+        <button class="auth-tabs__login active">Login</button>
+        <button class="auth-tabs__sign-up">Sign Up</button>
+      </section>
+
+      <section class="auth-content">
+        <form class="auth-content__login-form active">
+          <div class="auth-content__login-form__group">
+            <label for="loginEmail">Email Address</label>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="auth-content__login-form__group">
+            <label for="loginPassword">Password</label>
+            <div class="auth-content__login-form__group__pw-wrapper">
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+              />
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
+          <button type="submit" class="auth-content__login-form__submit-btn">
+            Login
+          </button>
+        </form>
+
+        <form class="auth-content__signup-form">
+          <div class="auth-content__signup-form__group">
+            <label for="registerName">Name</label>
+            <input
+              type="text"
+              id="registerName"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="auth-content__signup-form__group">
+            <label for="registerEmail">Email Address</label>
+            <input
+              type="text"
+              id="registerEmail"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="auth-content__signup-form__group">
+            <label for="registerPassword">Password</label>
+            <div class="auth-content__signup-form__group__pw-wrapper">
+              <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create a password"
+              />
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
+          <div class="auth-content__signup-form__group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="auth-content__signup-form__group__pw-wrapper">
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+              />
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
+          <button type="submit" class="auth-content__signup-form__submit-btn">
+            Create Account
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="js/authenticate.js"></script>
+  </body>
+</html>
